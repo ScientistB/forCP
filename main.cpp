@@ -1,15 +1,15 @@
-#include <iostream>
+#include <climits>
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
+#include <algorithm>
+#include <functional>
+#include <iostream>
+#include <numeric>
 #include <vector>
 #include <stack>
 #include <string>
-#include <climits>
-#include <algorithm>
-#include <functional>
-#include <string.h>
-#include <numeric>
-#include <cmath>
 
 #define LOOP(N) for(int i=0; i<(N); ++i)
 #define REP(i, N) for(int i=0; i<(N); ++i)
@@ -25,14 +25,14 @@ using ull = unsigned long long;
 void sayYes() {puts("Yes");}
 void sayNo() {puts("No");}
 
-int _main();
+#include "FastIO/FastIO.cpp"
+
+void _main(FastIO&);
 int main() {
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-    _main();
+    FastIO io;
+    _main(io);
 }
 
-
-int _main() {
-    cout << "This is template." << endl;
+void _main(FastIO &io) {
+    io.prints("This is template.");
 }
