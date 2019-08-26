@@ -1,2 +1,2 @@
 # forCP
-This is Library for Competitive programming.
+This is the Library for Competitive Programming.
