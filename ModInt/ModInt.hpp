@@ -1,39 +1,37 @@
-
-#ifndef MOD
-static const long long MOD = 1000000007;
-#endif
+using ll = long long;
+static const ll MOD = 1000000007;
 
 class ModInt {
-    long long v;
+    ll v;
 
 public:
-    ModInt(long long value) : v(value % MOD) {}
+    ModInt(ll value) : v(value % MOD) {}
     ModInt() {}
 
-    ModInt& operator+=(long long value) {
+    ModInt& operator+=(ll value) {
         value %= MOD;
         v = (v + value) % MOD;
         return *this;
     }
-    ModInt operator+(const long long value) const {
+    ModInt operator+(const ll value) const {
         ModInt new_v(v);
         return new_v += value;
     }
-    ModInt& operator-=(long long value) {
+    ModInt& operator-=(ll value) {
         value %= MOD;
         v = (v - value) % MOD;
         return *this;
     }
-    ModInt operator-(const long long value) const {
+    ModInt operator-(const ll value) const {
         ModInt new_v(v);
         return new_v -= value;
     }
-    ModInt& operator*=(long long value) {
+    ModInt& operator*=(ll value) {
         value %= MOD;
         v = v * value % MOD;
         return *this;
     }
-    ModInt operator*(const long long value) const {
+    ModInt operator*(const ll value) const {
         ModInt new_v(v);
         return new_v *= value;
     }
