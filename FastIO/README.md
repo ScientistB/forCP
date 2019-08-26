@@ -48,6 +48,7 @@ test
 
 output
 ```
+start
 10 20 100
 test
 5
