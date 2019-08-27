@@ -16,27 +16,24 @@ public:
         v = (v + value) % MOD;
         return *this;
     }
-    ModInt operator+(const ll value) const {
-        ModInt new_v(v);
-        return new_v += value;
-    }
     ModInt& operator-=(ll value) {
         value %= MOD;
         v = (v - value) % MOD;
         return *this;
-    }
-    ModInt operator-(const ll value) const {
-        ModInt new_v(v);
-        return new_v -= value;
     }
     ModInt& operator*=(ll value) {
         value %= MOD;
         v = v * value % MOD;
         return *this;
     }
+    ModInt operator+(const ll value) const {
+        return ModInt(v) += value;
+    }
+    ModInt operator-(const ll value) const {
+        return ModInt(v) -= value;
+    }
     ModInt operator*(const ll value) const {
-        ModInt new_v(v);
-        return new_v *= value;
+        return ModInt(v) *= value;
     }
 
     operator long long() const {
