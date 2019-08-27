@@ -1,3 +1,6 @@
+#ifndef FORCP_MODINT_HPP
+#define FORCP_MODINT_HPP
+
 using ll = long long;
 static const ll MOD = 1000000007;
 
@@ -41,3 +44,4 @@ public:
     }
 };
 
+#endif //FORCP_MODINT_HPP

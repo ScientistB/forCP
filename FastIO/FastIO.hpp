@@ -1,3 +1,6 @@
+#ifndef FORCP_FASTIO_HPP
+#define FORCP_FASTIO_HPP
+
 #include <iostream>
 
 class FastIO {
@@ -44,3 +47,5 @@ public:
         cout << "\n";
     }
 };
+
+#endif //FORCP_FASTIO_HPP
