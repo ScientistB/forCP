@@ -1,6 +1,8 @@
 #ifndef FORCP_MODINT_HPP
 #define FORCP_MODINT_HPP
 
+#include <utility>
+
 using ll = long long;
 static const ll MOD = 1000000007;
 
@@ -65,8 +67,8 @@ public:
         ll a = v, b = MOD, u = 1, v = 0, t;
         while (b) {
             t = a / b;
-            swap(a -= t * b, b);
-            swap(u -= t * v, v);
+            std::swap(a -= t * b, b);
+            std::swap(u -= t * v, v);
         }
         return ModInt((u % MOD + MOD) % MOD);
     }
