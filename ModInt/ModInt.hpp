@@ -16,6 +16,7 @@ public:
 
     ModInt& operator=(const ll value) {
         v = value;
+        return *this;
     }
 
     ModInt& operator+=(ll value) {
@@ -68,6 +69,18 @@ public:
             swap(u -= t * v, v);
         }
         return ModInt((u % MOD + MOD) % MOD);
+    }
+    ModInt Pow(ll e) {
+        ModInt result(1);
+        ModInt t(v);
+        for (; e > 0; e >>= 1) {
+            if (e % 2 == 1) {
+                result = result * t;
+            }
+            t *= t;
+        }
+
+        return result;
     }
 
     operator long long() const {
