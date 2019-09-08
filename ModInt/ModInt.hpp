@@ -10,7 +10,11 @@ static const ll MOD = 1000000007;
 class ModInt {
     ll v;
 
-    friend ModInt operator/(ll value, ModInt m);
+    friend ModInt operator+(ll, ModInt&);
+    friend ModInt operator-(ll, ModInt&);
+    friend ModInt operator*(ll, ModInt&);
+    friend ModInt operator/(ll, ModInt&);
+    friend ModInt operator%(ll, ModInt&);
 
 public:
     ModInt(ll value) : v(value % MOD) {}
@@ -62,6 +66,14 @@ public:
     ModInt operator/(T value) {
         return ModInt(v) /= value;
     }
+    template <typename T>
+    ModInt operator%(T value) {
+        return ModInt(v) %= value;
+    }
+
+    ModInt operator-() {
+        return ModInt(-v);
+    }
 
     ModInt Inverse() {
         ll a = v, b = MOD, u = 1, v = 0, t;
@@ -90,8 +102,20 @@ public:
     }
 };
 
-ModInt operator/(ll value, ModInt m) {
+ModInt operator+(ll value, ModInt& m) {
+    return m + value;
+}
+ModInt operator-(ll value, ModInt& m) {
+    return (-m) + value;
+}
+ModInt operator*(ll value, ModInt& m) {
+    return m * value;
+}
+ModInt operator/(ll value, ModInt& m) {
     return m.Inverse() * value;
+}
+ModInt operator%(ll value, ModInt& m) {
+    return ModInt(value)%(m.v);
 }
 
 
