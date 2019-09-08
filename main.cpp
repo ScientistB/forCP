@@ -12,14 +12,14 @@ using ull = unsigned long long;
 void sayYes() {puts("Yes");}
 void sayNo() {puts("No");}
 
-#include "FastIO/FastIO.hpp"
+#include "FastIO/CommonIO.hpp"
 
-void _main(FastIO&);
+void _main(CommonIO&);
 int main() {
-    FastIO io;
+    CommonIO io;
     _main(io);
 }
 
-void _main(FastIO &io) {
-    io.prints("This is template.");
+void _main(CommonIO &io) {
+    io.printl("This is template.");
 }

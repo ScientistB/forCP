@@ -3,15 +3,15 @@
 
 #include <iostream>
 
-class FastIO {
+class CommonIO {
 private:
 
 public:
-    FastIO() {
+    CommonIO() {
         cin.tie(0);
         ios::sync_with_stdio(false);
     }
-    ~FastIO() {}
+    ~CommonIO() {}
 
     template <class T>
     void scan(T &v) {
