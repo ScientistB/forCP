@@ -1,20 +1,4 @@
-#include <climits>
-#include <cmath>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <algorithm>
-#include <functional>
-#include <iostream>
-#include <numeric>
-#include <vector>
-#include <stack>
-#include <string>
-
-#define LOOP(N) for(int i=0; i<(N); ++i)
-#define REP(i, N) for(int i=0; i<(N); ++i)
-#define FOR(i, start, end) for(int i=(start); i<(end); ++i)
-#define ALL(a) (a).begin(),(a).end()
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,7 +9,7 @@ using ull = unsigned long long;
 void sayYes() {puts("Yes");}
 void sayNo() {puts("No");}
 
-#include "FastIO/FastIO.cpp"
+#include "FastIO/FastIO.hpp"
 
 void _main(FastIO&);
 int main() {
