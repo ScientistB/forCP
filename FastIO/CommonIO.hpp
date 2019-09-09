@@ -27,12 +27,6 @@ public:
     void print(T v) {
         cout << v;
     }
-    template <class T, class... Rest>
-    void print(T v, Rest... rest) {
-        print(v);
-        print(" ");
-        print(rest...);
-    }
     template <class T>
     void print(vector<T> v) {
         for (T t: v) {
@@ -41,8 +35,15 @@ public:
         }
         print("\b\n");
     }
+    template <class T, class... Rest>
+    void print(T v, Rest... rest) {
+        print(v);
+        print(" ");
+        print(rest...);
+    }
+
     template <class T>
-    void prints(T v) {
+    void printl(T v) {
         print(v);
         cout << "\n";
     }
