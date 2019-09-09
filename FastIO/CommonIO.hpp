@@ -47,6 +47,12 @@ public:
         print(v);
         cout << "\n";
     }
+    template <class T, class... Rest>
+    void printl(T v, Rest... rest) {
+        print(v);
+        print(" ");
+        printl(rest...);
+    }
 };
 
 #endif //FORCP_FASTIO_HPP
