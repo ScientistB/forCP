@@ -182,6 +182,15 @@ public:
             print(*it);
         }
     }
+    template <class T>
+    void print(std::vector< std::vector<T> > &grid) {
+        if (grid.size() == 0) return;
+        print(*grid.begin());
+        for (auto it = ++grid.begin(); it != grid.end(); ++it) {
+            PutChar('\n');
+            print(*it);
+        }
+    }
     template<typename First, typename ... Ints>
     void print(First arg, Ints... rest) {
         print(arg);
