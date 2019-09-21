@@ -175,11 +175,21 @@ public:
     void print(ull x) {PrintNatural(x);}
     template <class T>
     void print(std::vector<T> &v) {
-        for (auto i: v) {
-            print(i);
+        if (v.size() == 0) return;
+        print(*v.begin());
+        for (auto it = ++v.begin(); it != v.end(); ++it) {
             PutChar(' ');
+            print(*it);
         }
-        PutChar('\n');
+    }
+    template <class T>
+    void print(std::vector< std::vector<T> > &grid) {
+        if (grid.size() == 0) return;
+        print(*grid.begin());
+        for (auto it = ++grid.begin(); it != grid.end(); ++it) {
+            PutChar('\n');
+            print(*it);
+        }
     }
     template<typename First, typename ... Ints>
     void print(First arg, Ints... rest) {
@@ -201,8 +211,6 @@ public:
 
     void SayYes() {PrintString("Yes\n", 4);}
     void SayNo() {PrintString("No\n", 3);}
-};
-
-FastIO io;
+} io;
 
 #endif //FORCP_FASTIO_HPP

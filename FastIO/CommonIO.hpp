@@ -27,32 +27,40 @@ public:
     }
     template <class T>
     void print(std::vector<T> &v) {
-        for (T t: v) {
-            print(t);
-            print(" ");
+        if (v.size() == 0) return;
+        print(*v.begin());
+        for (auto it = ++v.begin(); it != v.end(); ++it) {
+            print(' ');
+            print(*it);
         }
-        print("\n");
+    }
+    template <class T>
+    void print(std::vector< std::vector<T> > &grid) {
+        if (grid.size() == 0) return;
+        print(*grid.begin());
+        for (auto it = ++grid.begin(); it != grid.end(); ++it) {
+            print('\n');
+            print(*it);
+        }
     }
     template <class T, class... Rest>
     void print(T v, Rest... rest) {
         print(v);
-        print(" ");
+        print(' ');
         print(rest...);
     }
 
     template <class T>
     void printl(T v) {
         print(v);
-        std::cout << "\n";
+        std::cout << '\n';
     }
     template <class T, class... Rest>
     void printl(T v, Rest... rest) {
         print(v);
-        print(" ");
+        print(' ');
         printl(rest...);
     }
-};
-
-CommonIO io;
+} io;
 
 #endif //FORCP_FASTIO_HPP
