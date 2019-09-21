@@ -9,17 +9,9 @@ using uint = unsigned int;
 using ll = long long;
 using ull = unsigned long long;
 
-void sayYes() {puts("Yes");}
-void sayNo() {puts("No");}
+#include "FastIO/FastIO.hpp"
 
-#include "FastIO/CommonIO.hpp"
 
-void _main(CommonIO&);
 int main() {
-    CommonIO io;
-    _main(io);
-}
-
-void _main(CommonIO &io) {
     io.printl("This is template.");
 }
