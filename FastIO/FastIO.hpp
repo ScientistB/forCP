@@ -211,8 +211,6 @@ public:
 
     void SayYes() {PrintString("Yes\n", 4);}
     void SayNo() {PrintString("No\n", 3);}
-};
-
-FastIO io;
+} io;
 
 #endif //FORCP_FASTIO_HPP
