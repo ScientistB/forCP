@@ -1,55 +1,116 @@
 # FastIO
 
 ## Abstruct
-This is a library for I/O.
+This is a library for I/O in competitive programing.
 
 FastIO is faster than using std::cin and std::out directly.
 
-Now, FastIO has very simple Implementation.
+This library contains 2 sub library, FastIO and CommonIO.
 
-So, There is room for speed up.
+FastIO can read and write standard integer and string.
+
+ex: 123, -123, "aaa"
+
+FastIO **cannot** read floating number.
+
+If you want to use floating number, please use CommonIO library.
+
+Please use them depending on our purpose.
 
 ## How To Use
-1. create FastIO instance
-1. use print, prints and scan method of the instance
+1. include FastIO or CommonIO library.
+1. use print or printl methods for input and scan method for output of "io".  
+print is to output without new line.  
+printl is to output with new line.
 
-## example
+FastIO and CommonIO is almost same interface.
+The difference is only floating number I/O.
+
+## Caution
+Don't use both FastIO and CommonIO at the same source code.
+
+They cannot use together.
+
+## Example 
+### FastIO
 
 source
 ```C++
-#include "FastIO/FastIO.cpp"
+#include "FastIO/FastIO.hpp"
 
 int main() {
-    FastIO io;
-    io.print("start");
-    
+    io.printl("start"); // output with new line
+
     int n;
-    io.scan(n);
-    io.print(n, n + n); // multi output without new line
-    io.print(n * n);
+    io.scan(n); // scan integer
+    io.print(n, n + n, n * n); // multi output without new line
     io.print("\n");
-    
-    string s;
-    io.scan(s);
-    io.prints(s); // with new line
-    
+
+    std::string s;
+    io.scan(s); // scan string
+    io.printl(s); // with new line
+
     int a, b;
     io.scan(a, b); // multi scan
-    io.print(a + b);
+    io.printl("a + b =", a + b); // multi output with new line
+
+    return 0;
 }
 ```
 
-input
+stdin
 ```
 10
 test
 2 3
 ```
 
-output
+stdout
 ```
 start
 10 20 100
 test
-5
+a + b = 5
+```
+
+### CommonIO
+source
+```C++
+#include "FastIO/CommonIO.hpp"
+
+int main() {
+    std::cin >> m;
+    // integer and string scan
+    int n;
+    io.scan(n);
+    std::string s;
+    io.scan(s);
+
+    double f;
+    io.scan(f); // multi scan
+
+    int m;
+    std::cin >> m; // cin is available
+
+    std::cout << n << std::endl; // cout is available
+    io.printl(n * n, s); // multi print with new line
+    io.print(f, "\n"); // multi print without new line
+    io.printl(m);
+}
+```
+
+stdin
+```
+10
+aaa
+12.3
+345
+```
+
+stdout
+```
+10
+100 aaa
+12.3 
+345
 ```
