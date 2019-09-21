@@ -9,50 +9,50 @@ This library contains 2 sub library, FastIO and CommonIO.
 
 FastIO can read and write standard integer and string.
 
-ex: -123, "aaa"
+ex: 123, -123, "aaa"
 
-FastIO **cannot** read other types.
+FastIO **cannot** read floating number.
 
-ex: 1e9, 2.5, 0xFF
-
-If you want to use other types, please use CommonIO library.
+If you want to use floating number, please use CommonIO library.
 
 Please use them depending on our purpose.
 
 ## How To Use
-1. create FastIO or CommonIO instance.
-1. use print or printl methods for input and scan method for output of the instance.  
+1. include FastIO or CommonIO library.
+1. use print or printl methods for input and scan method for output of "io".  
 print is to output without new line.  
 printl is to output with new line.
 
+FastIO and CommonIO is almost same interface.
+The difference is only floating number I/O.
 
 ## Caution
 Don't use both FastIO and CommonIO at the same source code.
 
 They cannot use together.
 
-### example 1: standard integer and string
+## Example 
+### FastIO
 
 source
 ```C++
-#include "FastIO/FastIO.cpp"
+#include "FastIO/FastIO.hpp"
 
 int main() {
-    FastIO io;
     io.printl("start"); // output with new line
-    
+
     int n;
     io.scan(n); // scan integer
     io.print(n, n + n, n * n); // multi output without new line
     io.print("\n");
-    
-    string s;
+
+    std::string s;
     io.scan(s); // scan string
     io.printl(s); // with new line
-    
+
     int a, b;
     io.scan(a, b); // multi scan
-    io.printl("a + b = ", a + b); // multi output with new line
+    io.printl("a + b =", a + b); // multi output with new line
 
     return 0;
 }
@@ -73,35 +73,44 @@ test
 a + b = 5
 ```
 
-### example 2: exponential notation, floating number, hexadecimal
+### CommonIO
+source
 ```C++
 #include "FastIO/CommonIO.hpp"
 
 int main() {
-    CommonIO io;
-    
+    std::cin >> m;
+    // integer and string scan
     int n;
     io.scan(n);
-    string s;
+    std::string s;
     io.scan(s);
 
-    int exp;
     double f;
-    int hex;
-    io.scan(exp, f, hex);
+    io.scan(f); // multi scan
+
+    int m;
+    std::cin >> m; // cin is available
+
+    std::cout << n << std::endl; // cout is available
+    io.printl(n * n, s); // multi print with new line
+    io.print(f, "\n"); // multi print without new line
+    io.printl(m);
 }
 ```
 
 stdin
 ```
-123
+10
 aaa
-1e5
 12.3
-0xAA
+345
 ```
 
 stdout
 ```
-
+10
+100 aaa
+12.3 
+345
 ```
