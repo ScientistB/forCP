@@ -175,11 +175,12 @@ public:
     void print(ull x) {PrintNatural(x);}
     template <class T>
     void print(std::vector<T> &v) {
-        for (auto i: v) {
-            print(i);
+        if (v.size() == 0) return;
+        print(*v.begin());
+        for (auto it = ++v.begin(); it != v.end(); ++it) {
             PutChar(' ');
+            print(*it);
         }
-        PutChar('\n');
     }
     template<typename First, typename ... Ints>
     void print(First arg, Ints... rest) {
