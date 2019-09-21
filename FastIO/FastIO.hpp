@@ -4,6 +4,7 @@
 #include <cstring>
 #include <cctype>
 #include <string>
+#include <vector>
 #include "../types.hpp"
 
 class FastIO {
@@ -172,6 +173,14 @@ public:
     void print(ll x) {PrintInteger(x);}
     void print(uint x) {PrintNatural(x);}
     void print(ull x) {PrintNatural(x);}
+    template <class T>
+    void print(std::vector<T> &v) {
+        for (auto i: v) {
+            print(i);
+            PutChar(' ');
+        }
+        PutChar('\n');
+    }
     template<typename First, typename ... Ints>
     void print(First arg, Ints... rest) {
         print(arg);
