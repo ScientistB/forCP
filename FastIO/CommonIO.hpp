@@ -1,21 +1,19 @@
 #ifndef FORCP_FASTIO_HPP
 #define FORCP_FASTIO_HPP
-
 #include <iostream>
+#include <vector>
 
 class CommonIO {
-private:
-
 public:
     CommonIO() {
-        cin.tie(0);
-        ios::sync_with_stdio(false);
+        std::cin.tie(0);
+        std::ios::sync_with_stdio(false);
     }
     ~CommonIO() {}
 
     template <class T>
     void scan(T &v) {
-        cin >> v;
+        std::cin >> v;
     }
     template <class T, class... Rest>
     void scan(T &v, Rest&... rest) {
@@ -25,15 +23,15 @@ public:
 
     template <class T>
     void print(T v) {
-        cout << v;
+        std::cout << v;
     }
     template <class T>
-    void print(vector<T> v) {
+    void print(std::vector<T> &v) {
         for (T t: v) {
             print(t);
             print(" ");
         }
-        print("\b\n");
+        print("\n");
     }
     template <class T, class... Rest>
     void print(T v, Rest... rest) {
@@ -45,7 +43,7 @@ public:
     template <class T>
     void printl(T v) {
         print(v);
-        cout << "\n";
+        std::cout << "\n";
     }
     template <class T, class... Rest>
     void printl(T v, Rest... rest) {
@@ -54,5 +52,7 @@ public:
         printl(rest...);
     }
 };
+
+CommonIO io;
 
 #endif //FORCP_FASTIO_HPP
