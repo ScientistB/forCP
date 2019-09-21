@@ -3,6 +3,8 @@
 #include <cstdio>
 #include <cstring>
 #include <cctype>
+#include <string>
+#include "../types.hpp"
 
 class FastIO {
     static const int BUF_SIZE = 1<<17;
@@ -133,7 +135,7 @@ public:
     }
     ~FastIO() {flush();}
 
-    void scan(string &s) {
+    void scan(std::string &s) {
         char c = GetChar();
         while (!isprint(c)) c = GetChar();
 
@@ -165,14 +167,14 @@ public:
 
         PrintString(s, len);
     }
-    void print(string &s) {PrintString(s.c_str(), s.size());}
+    void print(std::string &s) {PrintString(s.c_str(), s.size());}
     void print(char c) {PutChar(c);}
     void print(int x) {PrintInteger(x);}
     void print(ll x) {PrintInteger(x);}
     void print(uint x) {PrintNatural(x);}
     void print(ull x) {PrintNatural(x);}
     template<typename First, typename ... Ints>
-    void print(First &arg, Ints&... rest) {
+    void print(First arg, Ints... rest) {
         print(arg);
         PutChar(' ');
         print(rest...);
@@ -183,7 +185,7 @@ public:
         PutChar('\n');
     }
     template <typename First, typename ... Ints>
-    void printl(First &arg, Ints&... rest) {
+    void printl(First arg, Ints... rest) {
         print(arg);
         PutChar(' ');
         printl(rest...);
