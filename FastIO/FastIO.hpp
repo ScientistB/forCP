@@ -2,7 +2,7 @@
 #define FORCP_FASTIO_HPP
 
 class FastIO {
-    static const int BUF_SIZE = 1<<5;
+    static const int BUF_SIZE = 1<<17;
     char inBuf[BUF_SIZE + 2];
     char *in, *inEnd = inBuf + BUF_SIZE;
     char outBuf[BUF_SIZE + 2];
