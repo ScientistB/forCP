@@ -94,8 +94,8 @@ class FastIO {
     // 非負整数値の出力
     template<typename T>
     void PrintNatural(T x) {
-        char digit[20], *d_start, *d_end;
-        d_start = d_end = digit + 32;
+        char digit[21], *d_start, *d_end;
+        d_start = d_end = digit + 21;
         // x = 0 の場合も0を出力する必要があるので、do whileで最低1桁は処理する
         do {
             // 上の桁に向かって処理していくので、表示順序と逆になる
