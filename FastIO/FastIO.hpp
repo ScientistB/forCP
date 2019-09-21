@@ -1,5 +1,8 @@
 #ifndef FORCP_FASTIO_HPP
 #define FORCP_FASTIO_HPP
+#include <cstdio>
+#include <cstring>
+#include <cctype>
 
 class FastIO {
     static const int BUF_SIZE = 1<<17;
@@ -191,6 +194,5 @@ public:
 };
 
 FastIO io;
-
 
 #endif //FORCP_FASTIO_HPP
