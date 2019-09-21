@@ -140,7 +140,6 @@ public:
         while (!isprint(c)) c = GetChar();
 
         s.clear();
-        s.push_back(c);
         for (; isprint(c); c = GetChar()) {
             s.push_back(c);
         }
